@@ -1,7 +1,6 @@
 {
   "_static": {
-    "application": "git@github.com:from-static/static-resume.git",
-    "version": "0.1.0"
+    "generator": "from-static/static-resume",
   },
   "metadata": {
     "title": "Resume | Jane Doe",
