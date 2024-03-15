@@ -27,14 +27,14 @@ jobs:
             const { generator, version } = staticConfig._static;
             // If there isn't a version, the respository is always using the default branch
             if (!version) {
-              console.log("No version found in static.json");
+              core.debug("No version found in static.json");
               return;
             }
             let nextVersion = null;
             try {
               nextVersion = parseInt(version.split(".")[0].replace("v", "")) + 1;
             } catch (e) {
-              console.log("Error parsing version", e);
+              core.error("Error parsing version", e);
               return;
             }
             const [owner, repo] = generator.split("/");
@@ -46,16 +46,18 @@ jobs:
                 branch,
               });
             } catch (e) {
-              console.log(
+              core.debug(
                 `Error fetching next version (${branch}), it might not be published yet!`
               );
               return;
             }
+            const versionRegExp= new RegExp(`(\"version\"\w*:\w*)\"${version}\"`);
             const updatedStaticConfig = staticConfigAsString.replace(
-              /(\"version\"\w*:\w*)\"v1\"/,
+              versionRegExp,
               `$1"${branch}"`
             );
-            console.log(`Writing updated static.json with version ${branch} to disk.`);
+            core.debug(`Writing updated static.json with version ${branch} to disk...`);
+            core.debug(updatedStaticConfig);
             fs.writeFileSync("./static.json", updatedStaticConfig);
             return JSON.parse(updatedStaticConfig);
       - name: Check for Changes
