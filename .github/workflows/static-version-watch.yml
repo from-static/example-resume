@@ -1,6 +1,7 @@
 name: static-version-watch
 on:
   workflow_call:
+  workflow_dispatch:
       
 permissions:
   contents: read
