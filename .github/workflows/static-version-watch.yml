@@ -55,6 +55,6 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              title: `static: ${generator}@${branch} is available!`
+              title: `static: ${generator}@${branch} is available!`,
               body: '👋'
             })
