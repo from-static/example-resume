@@ -39,9 +39,14 @@ jobs:
               return;
             }
             const [owner, repo] = generator.split("/");
-            const response = github.rest.repos.getBranch({
-              owner,
-              repo,
-              branch: nextVersion
-            });
-            console.log(nextVersion, response);
+            const branch = `v${nextVersion}`;
+            try {
+              const response = github.rest.repos.getBranch({
+                owner,
+                repo,
+                branch
+              });
+            } catch (e) {
+              console.log(`Error fetching next version (${branch}), it might not be published yet!`);
+            }
+            console.log(`Attempting to open a Pull Request to suggest updating to ${branch}`);
