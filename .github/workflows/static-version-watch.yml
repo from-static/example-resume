@@ -24,18 +24,15 @@ jobs:
             const path = require("path");
             const staticConfigAsString = fs.readFileSync("./static.json", "utf8");
             const staticConfig = JSON.parse(staticConfigAsString);
-            const {
-              generator,
-              version
-            } = staticConfig._static;
+            const { generator, version } = staticConfig._static;
             // If there isn't a version, the respository is always using the default branch
             if (!version) {
               console.log("No version found in static.json");
               return;
-            };
+            }
             let nextVersion = null;
             try {
-              nextVersion = parseInt(version.split(".")[0].replace(/(\"version\"\w*:\w*\"v1\"/), "")) + 1;
+              nextVersion = parseInt(version.split(".")[0].replace("v", "")) + 1;
             } catch (e) {
               console.log("Error parsing version", e);
               return;
@@ -46,14 +43,19 @@ jobs:
               const response = await github.rest.repos.getBranch({
                 owner,
                 repo,
-                branch
+                branch,
               });
             } catch (e) {
-              console.log(`Error fetching next version (${branch}), it might not be published yet!`);
+              console.log(
+                `Error fetching next version (${branch}), it might not be published yet!`
+              );
               return;
             }
-            console.log(`Attempting to open a Pull Request to suggest updating to ${branch}`);
-            const updatedStaticConfig = staticConfigAsString.replace(/(\"version\"\w*:\w*)\"v1\"/, `$1"${branch}"`));
+            const updatedStaticConfig = staticConfigAsString.replace(
+              /(\"version\"\w*:\w*)\"v1\"/,
+              `$1"${branch}"`
+            );
+            console.log(`Writing updated static.json with version ${branch} to disk.`);
             fs.writeFileSync("./static.json", updatedStaticConfig);
             return JSON.parse(updatedStaticConfig);
       - name: Check for Changes
