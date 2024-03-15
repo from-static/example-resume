@@ -41,7 +41,7 @@ jobs:
             const [owner, repo] = generator.split("/");
             const branch = `v${nextVersion}`;
             try {
-              const response = github.rest.repos.getBranch({
+              const response = await github.rest.repos.getBranch({
                 owner,
                 repo,
                 branch
