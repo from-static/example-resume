@@ -1,6 +1,7 @@
 {
   "_static": {
-    "generator": "from-static/static-resume"
+    "generator": "from-static/static-resume",
+    "version": "v1"
   },
   "metadata": {
     "title": "Resume | Jane Doe",

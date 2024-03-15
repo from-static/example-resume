@@ -27,7 +27,10 @@ jobs:
               version
             } = staticConfig._static;
             // If there isn't a version, the respository is always using the default branch
-            if (!version) return null;
+            if (!version) {
+              console.log("No version found in static.json");
+              return;
+            };
             let nextVersion = null;
             try {
               nextVersion = parseInt(version.split(".")[0].replace("v", "")) + 1;
