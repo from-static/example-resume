@@ -48,5 +48,13 @@ jobs:
               });
             } catch (e) {
               console.log(`Error fetching next version (${branch}), it might not be published yet!`);
+              return;
             }
             console.log(`Attempting to open a Pull Request to suggest updating to ${branch}`);
+            github.rest.issues.create({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `static: ${generator}@${branch} is available!`
+              body: '👋'
+            })
