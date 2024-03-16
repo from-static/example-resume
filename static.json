@@ -1,8 +1,4 @@
 {
-  "_static": {
-    "generator": "from-static/static-resume",
-    "version": "v1"
-  },
   "metadata": {
     "title": "Resume | Jane Doe",
     "description": "This is an example resume generated from a static.json file."
@@ -11,7 +7,7 @@
     "person": {
       "@context": "https://schema.org",
       "@type": "Person",
-      "givenName": "Jane",
+      "givenName": "Bill",
       "familyName": "Doe",
       "address": {
         "@type": "PostalAddress",
@@ -26,7 +22,7 @@
     "experience": [
       {
         "title": "Software Engineer",
-        "company_name": "static",
+        "company_name": "something",
         "location": "Chicago, IL",
         "industry": "Research"
       },
