@@ -21,7 +21,8 @@
             "@type": "PostalAddress",
             "addressLocality": "Chicago",
             "addressRegion": "IL",
-            "streetAddress": null
+            "streetAddress": null,
+            "postalCode": null
           }
         },
         "experience": [
