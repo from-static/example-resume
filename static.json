@@ -8,29 +8,25 @@
     "version": "1.0.0",
     "attributes": {
       "metadata": {
-        "title": "Resume | Jane Doe",
+        "title": "Resume | Joe Bottigliero",
         "description": "This is an example resume generated from a static.json file."
       },
       "contents": {
         "person": {
           "@context": "https://schema.org",
           "@type": "Person",
-          "givenName": "Bill",
-          "familyName": "Doe",
+          "givenName": "Joe",
+          "familyName": "Bottigliero",
           "address": {
             "@type": "PostalAddress",
-            "addressLocality": "Seattle",
-            "addressRegion": "WA",
-            "postalCode": "98052",
-            "streetAddress": "20341 Whitworth Institute 405 N. Whitworth"
+            "addressLocality": "Chicago",
+            "addressRegion": "IL",
           },
-          "email": "jane-doe@xyz.edu",
-          "telephone": "(425) 123-4567"
         },
         "experience": [
           {
             "title": "Software Engineer",
-            "company_name": "something",
+            "company_name": "@from-static",
             "location": "Chicago, IL",
             "industry": "Research"
           },
