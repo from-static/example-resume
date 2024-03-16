@@ -1,43 +1,53 @@
 {
-  "metadata": {
-    "title": "Resume | Jane Doe",
-    "description": "This is an example resume generated from a static.json file."
+  "_static": {
+    "generator": {
+      "name": "@from-static/static-resume"
+    }
   },
-  "contents": {
-    "person": {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "givenName": "Bill",
-      "familyName": "Doe",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Seattle",
-        "addressRegion": "WA",
-        "postalCode": "98052",
-        "streetAddress": "20341 Whitworth Institute 405 N. Whitworth"
+  "data": {
+    "version": "1.0.0",
+    "attributes": {
+      "metadata": {
+        "title": "Resume | Jane Doe",
+        "description": "This is an example resume generated from a static.json file."
       },
-      "email": "jane-doe@xyz.edu",
-      "telephone": "(425) 123-4567"
-    },
-    "experience": [
-      {
-        "title": "Software Engineer",
-        "company_name": "something",
-        "location": "Chicago, IL",
-        "industry": "Research"
-      },
-      {
-        "title": "JOB TITLE 1",
-        "company_name": "COMPANY NAME 1",
-        "location": "LOCATION 1",
-        "industry": "INDUSTRY 1"
-      },
-      {
-        "title": "JOB TITLE 0",
-        "company_name": "COMPANY NAME 0",
-        "location": "LOCATION 0",
-        "industry": "INDUSTRY 0"
+      "contents": {
+        "person": {
+          "@context": "https://schema.org",
+          "@type": "Person",
+          "givenName": "Bill",
+          "familyName": "Doe",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Seattle",
+            "addressRegion": "WA",
+            "postalCode": "98052",
+            "streetAddress": "20341 Whitworth Institute 405 N. Whitworth"
+          },
+          "email": "jane-doe@xyz.edu",
+          "telephone": "(425) 123-4567"
+        },
+        "experience": [
+          {
+            "title": "Software Engineer",
+            "company_name": "something",
+            "location": "Chicago, IL",
+            "industry": "Research"
+          },
+          {
+            "title": "JOB TITLE 1",
+            "company_name": "COMPANY NAME 1",
+            "location": "LOCATION 1",
+            "industry": "INDUSTRY 1"
+          },
+          {
+            "title": "JOB TITLE 0",
+            "company_name": "COMPANY NAME 0",
+            "location": "LOCATION 0",
+            "industry": "INDUSTRY 0"
+          }
+        ]
       }
-    ]
+    }
   }
 }
