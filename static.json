@@ -20,7 +20,7 @@
           "address": {
             "@type": "PostalAddress",
             "addressLocality": "Chicago",
-            "addressRegion": "IL",
+            "addressRegion": "IL"
           }
         },
         "experience": [
